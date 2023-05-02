@@ -1,25 +1,34 @@
 import React, { useState } from "react";
-import "./LoginForm.css";
+import "./SignupForm.css";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import { IconButton, Input } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
-import { Person, Visibility, VisibilityOff, Lock } from "@mui/icons-material";
-import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
+import {
+  Person,
+  Visibility,
+  VisibilityOff,
+  Lock,
+  EmailRounded,
+} from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
-function LoginForm() {
+function SignupForm() {
   const [popupStyle, showPopup] = useState("hide");
   const popup = () => {
     showPopup("login-popup");
     setTimeout(() => showPopup("hide"), 3000);
   };
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleClickShowConfirmPassword = () =>
+    setShowConfirmPassword((show) => !show);
   return (
-    <div className="login">
-      <h1>Đăng nhập</h1>
+    <div className="signup">
+      <h1>Đăng ký</h1>
       <Box sx={{ display: "flex", alignItems: "flex-end" }}>
         <Person sx={{ mr: 2, fontSize: "2.2em" }} />
         <FormControl>
@@ -49,13 +58,42 @@ function LoginForm() {
           ></Input>
         </FormControl>
       </Box>
+      <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+        <Lock sx={{ mr: 2, fontSize: "2.2em" }} />
+        <FormControl>
+          <InputLabel htmlFor="confirmPassword">Nhập lại mật khẩu</InputLabel>
+          <Input
+            sx={{ width: "17em" }}
+            id="password"
+            type={showConfirmPassword ? "text" : "password"}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle confirm password visibility"
+                  onClick={handleClickShowConfirmPassword}
+                  edge="end"
+                >
+                  {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
+          ></Input>
+        </FormControl>
+      </Box>
+      <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+        <EmailRounded sx={{ mr: 2, fontSize: "2.2em" }} />
+        <FormControl>
+          <InputLabel htmlFor="email">Email</InputLabel>
+          <Input id="email" type="email" sx={{ width: "17em" }} required />
+        </FormControl>
+      </Box>
 
-      <div className="login-btn" onClick={popup}>
-        Đăng nhập
+      <div className="signup-btn" onClick={popup}>
+        Đăng ký
       </div>
       <p>
-        Chưa có tài khoản?{" "}
-        <Link to={"/signup"}>
+        Đã có tài khoản?
+        <Link to="/login">
           <Button
             variant="text"
             style={{
@@ -63,13 +101,13 @@ function LoginForm() {
               fontStyle: "italic",
             }}
           >
-            Đăng ký ngay
+            Đăng nhập ngay
           </Button>
         </Link>
       </p>
 
       <div className={popupStyle}>
-        <h3>Login Failed</h3>
+        <h3>Signup Failed</h3>
         <p>Username or password incorrect</p>
         {/* Temp */}
       </div>
@@ -77,4 +115,4 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default SignupForm;
