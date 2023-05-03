@@ -63,3 +63,25 @@
 .input p {
   margin: 1.2em;
 }
+.username,
+.password,
+.email,
+.confirmPassword {
+  width: 17em;
+}
+@media only screen and (max-width: 570px) {
+  .signup {
+    width: 25em;
+  }
+}
+@media only screen and (max-width: 410px) {
+  .signup {
+    width: 20em;
+  }
+  .username,
+  .password,
+  .email,
+  .confirmPassword {
+    width: 13em;
+  }
+}
