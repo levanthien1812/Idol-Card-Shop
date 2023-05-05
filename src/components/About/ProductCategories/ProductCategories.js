@@ -4,6 +4,7 @@ import { ButtonBase } from "@mui/material";
 import styled from "@emotion/styled";
 import { Container } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import { useNavigate } from "react-router-dom";
 
 const ImageBackdrop = styled("div")(() => ({
   position: "absolute",
@@ -55,40 +56,52 @@ const images = [
     title: "Album",
     width: "40%",
     height: "33em",
+    link: "/products/?category=album"
   },
   {
     url: "https://images.unsplash.com/photo-1531299204812-e6d44d9a185c?auto=format&fit=crop&w=400",
     title: "Card",
     width: "38%",
     height: "33em",
+    link: "/products/?category=card"
   },
   {
     url: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400",
     title: "Bưu thiếp",
     width: "22%",
     height: "33em",
+    link: "/products/?category=buu-thiep"
   },
   {
     url: "https://images-na.ssl-images-amazon.com/images/I/61dMr8RTFvL._SL1469_.jpg",
     title: "Móc khóa",
     width: "25%",
     height: "33em",
+    link: "/products/?category=moc-khoa"
   },
   {
     url: "https://images.unsplash.com/photo-1531299204812-e6d44d9a185c?auto=format&fit=crop&w=400",
     title: "Poster",
     width: "40%",
     height: "33em",
+    link: "/products/?category=poster"
   },
   {
     url: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400",
     title: "Dây đeo",
     width: "35%",
     height: "33em",
+    link: "/products/?category=day-deo"
   },
 ];
 
 function ProductCategories() {
+  const navigate = useNavigate()
+
+  const imageClickHandler = (link) => {
+  navigate(link)
+}
+
   return (
     <Container sx={{ mt: "30em" }}>
       <Typography variant="h4" marked="center" align="center" component="h2">
@@ -99,6 +112,7 @@ function ProductCategories() {
           <ImageIconButton
             key={item.title}
             style={{ width: item.width, height: item.height }}
+            onClick={() => {imageClickHandler(item.link)}}
           >
             <Box
               sx={{
