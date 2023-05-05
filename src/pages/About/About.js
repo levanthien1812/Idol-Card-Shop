@@ -7,11 +7,7 @@ import ProductCategories from "../../components/About/ProductCategories/ProductC
 
 function About() {
   return (
-    <Container>
-      <AppAppBar />
       <ProductCategories />
-      <Footer />
-    </Container>
   );
 }
 
