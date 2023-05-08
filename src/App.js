@@ -1,6 +1,6 @@
 import React from "react";
 import SignupForm from "./pages/SignUp/SignupForm";
-import { BrowserRouter as Router, Routes, Route, createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LoginForm from "./pages/Login/LoginForm";
 import About from "./pages/About/About";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
@@ -50,9 +50,9 @@ function App() {
                   element: <DetailProduct />,
                 },
                 {
-                  path: 'order',
-                  element: <Order/>
-                }
+                  path: "order",
+                  element: <Order />,
+                },
               ],
             },
           ],
@@ -60,9 +60,7 @@ function App() {
       ],
     },
   ]);
-  return (
-    <RouterProvider router={router}/>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

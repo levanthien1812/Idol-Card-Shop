@@ -74,8 +74,8 @@ export const categories = [
     image: "https://static-cse.canva.com/blob/1052545/1600w-1Nr6gsUndKw.jpg",
   },
   {
-    id: "card",
-    name: "Card",
+    id: "photocard",
+    name: "Photocard",
     image: "https://static-cse.canva.com/blob/1052545/1600w-1Nr6gsUndKw.jpg",
   },
   {
