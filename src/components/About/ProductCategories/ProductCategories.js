@@ -60,10 +60,10 @@ const images = [
   },
   {
     url: "https://d3tvwjfge35btc.cloudfront.net/Assets/GalleryImage/47/332/L_g0146433247.jpg",
-    title: "Card",
+    title: "Photocard",
     width: "28%",
     height: "33em",
-    link: "/products/?category=card",
+    link: "/products/?category=photocard",
   },
   {
     url: "https://i.etsystatic.com/35874120/r/il/9cb84e/4184343289/il_794xN.4184343289_dztf.jpg",
@@ -104,7 +104,7 @@ function ProductCategories() {
   };
 
   return (
-    <Container sx={{ mt: "30em" }}>
+    <Container sx={{ mt: "7em" }}>
       <Typography variant="h4" marked="center" align="center" component="h2">
         Những sản phẩm chủ yếu
       </Typography>
