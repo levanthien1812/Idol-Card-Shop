@@ -56,51 +56,52 @@ const images = [
     title: "Album",
     width: "40%",
     height: "33em",
-    link: "/products/?category=album"
+    link: "/products/?category=album",
   },
   {
-    url: "https://images.unsplash.com/photo-1531299204812-e6d44d9a185c?auto=format&fit=crop&w=400",
+    url: "https://d3tvwjfge35btc.cloudfront.net/Assets/GalleryImage/47/332/L_g0146433247.jpg",
     title: "Card",
-    width: "38%",
+    width: "28%",
     height: "33em",
-    link: "/products/?category=card"
+    link: "/products/?category=card",
   },
   {
-    url: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400",
-    title: "Bưu thiếp",
-    width: "22%",
+    url: "https://i.etsystatic.com/35874120/r/il/9cb84e/4184343289/il_794xN.4184343289_dztf.jpg",
+    title: "Dây đeo",
+    width: "32%",
     height: "33em",
-    link: "/products/?category=buu-thiep"
+    link: "/products/?category=day-deo",
   },
   {
-    url: "https://images-na.ssl-images-amazon.com/images/I/61dMr8RTFvL._SL1469_.jpg",
+    url: "https://ae01.alicdn.com/kf/S49cc412ef88f4e898c9ac5702104f619e/Kawaii-Kpop-Bt211-MANG-SHOOKY-RJ-Keychain-Anime-COOKY-KOYA-CHIMMY-Cartoon-Acrylic-Key-Ring-Cute.jpg_640x640.jpg",
     title: "Móc khóa",
     width: "25%",
     height: "33em",
-    link: "/products/?category=moc-khoa"
+    link: "/products/?category=moc-khoa",
   },
   {
-    url: "https://images.unsplash.com/photo-1531299204812-e6d44d9a185c?auto=format&fit=crop&w=400",
+    url: "https://qph.cf2.quoracdn.net/main-qimg-1549f42781dac6a380d8870203566880",
     title: "Poster",
-    width: "40%",
+    width: "30%",
     height: "33em",
-    link: "/products/?category=poster"
+    link: "/products/?category=poster",
   },
+
   {
-    url: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400",
-    title: "Dây đeo",
-    width: "35%",
+    url: "https://www.sanity.com.au/media/Images/fullimage/816638/SDC_2758297_2023-24-3--16-04-27.jpg",
+    title: "Lightstick",
+    width: "45%",
     height: "33em",
-    link: "/products/?category=day-deo"
+    link: "/products/?category=lightstick",
   },
 ];
 
 function ProductCategories() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const imageClickHandler = (link) => {
-  navigate(link)
-}
+    navigate(link);
+  };
 
   return (
     <Container sx={{ mt: "30em" }}>
@@ -112,7 +113,9 @@ function ProductCategories() {
           <ImageIconButton
             key={item.title}
             style={{ width: item.width, height: item.height }}
-            onClick={() => {imageClickHandler(item.link)}}
+            onClick={() => {
+              imageClickHandler(item.link);
+            }}
           >
             <Box
               sx={{
