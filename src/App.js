@@ -7,11 +7,12 @@ import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import Products from "./pages/Products/Products";
 import AppRoot from "./components/AppRoot";
 import DetailProduct from "./pages/Products/DetailProduct";
+import Order from "./pages/Order/Order";
 
 function App() {
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: "/",
       element: <AppRoot />,
       children: [
         {
@@ -19,37 +20,46 @@ function App() {
           element: <About />,
         },
         {
-          path: 'about',
+          path: "about",
           element: <About />,
         },
         {
-          path: 'login',
+          path: "login",
           element: <LoginForm />,
         },
         {
-          path: 'signup',
+          path: "signup",
           element: <SignupForm />,
         },
         {
-          path: 'forgotpassword',
+          path: "forgotpassword",
           element: <ForgotPassword />,
         },
         {
-          path: 'products',
+          path: "products",
           children: [
             {
               index: true,
-              element: <Products />
+              element: <Products />,
             },
             {
-              path: ':id',
-              element: <DetailProduct/>
-            }
-          ]
+              path: ":id",
+              children: [
+                {
+                  index: true,
+                  element: <DetailProduct />,
+                },
+                {
+                  path: 'order',
+                  element: <Order/>
+                }
+              ],
+            },
+          ],
         },
-      ]
-    }
-  ])
+      ],
+    },
+  ]);
   return (
     <RouterProvider router={router}/>
   );
