@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./SignupForm.css";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
-import { IconButton, Input } from "@mui/material";
+import { IconButton, Input, Container } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import Button from "@mui/material/Button";
@@ -28,7 +28,14 @@ function SignupForm() {
   const handleClickShowConfirmPassword = () =>
     setShowConfirmPassword((show) => !show);
   return (
-    <div>
+    <Container
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        mt: "10em",
+      }}
+    >
       <AppAppBar />
       <div className="signup">
         <h1>Đăng ký</h1>
@@ -117,7 +124,7 @@ function SignupForm() {
           <p>Username or password incorrect</p>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 

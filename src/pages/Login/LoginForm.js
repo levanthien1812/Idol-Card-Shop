@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./LoginForm.css";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
-import { IconButton, Input } from "@mui/material";
+import { Container, IconButton, Input } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import { Person, Visibility, VisibilityOff, Lock } from "@mui/icons-material";
@@ -21,7 +21,14 @@ function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   return (
-    <div>
+    <Container
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        mt: "10em",
+      }}
+    >
       <AppAppBar />
       <div className="login">
         <h1>Đăng nhập</h1>
@@ -104,7 +111,7 @@ function LoginForm() {
           <p>Username or password incorrect</p>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 
