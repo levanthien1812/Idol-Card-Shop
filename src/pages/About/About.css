@@ -1,0 +1,28 @@
+@media only screen and (max-width: 500px) {
+  .imageIconBtn {
+    width: 100% !important;
+    height: 27em !important;
+  }
+  .productCategories {
+    flex-direction: column;
+  }
+  .pcHeader {
+    font-size: 1.5em !important;
+  }
+  .servicesHeader {
+    font-size: 2em !important;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .gsHeader {
+    font-size: 3em !important;
+    margin-top: 1.3em !important;
+  }
+  .gsText {
+    font-size: 1.1em !important;
+    margin-top: 2em !important;
+  }
+  .gsSignUpBtn {
+    font-size: medium !important;
+  }
+}

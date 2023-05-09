@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import { Container } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
+import "./ProductCategories.css";
 
 const ImageBackdrop = styled("div")(() => ({
   position: "absolute",
@@ -104,13 +105,24 @@ function ProductCategories() {
   };
 
   return (
-    <Container sx={{ mt: "7em" }}>
-      <Typography variant="h4" marked="center" align="center" component="h2">
+    <Container sx={{ mt: "3em" }}>
+      <Typography
+        className="pcHeader"
+        variant="h4"
+        color={"#777172"}
+        align="center"
+        component="h2"
+        fontFamily={"'Braah One', sans-serif"}
+      >
         Những sản phẩm chủ yếu
       </Typography>
-      <Box sx={{ mt: 8, display: "flex", flexWrap: "wrap" }}>
+      <Box
+        className="productCategories"
+        sx={{ mt: 4, display: "flex", flexWrap: "wrap" }}
+      >
         {images.map((item) => (
           <ImageIconButton
+            className="imageIconBtn"
             key={item.title}
             style={{ width: item.width, height: item.height }}
             onClick={() => {

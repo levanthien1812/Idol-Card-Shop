@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Container, Button, Typography } from "@mui/material";
+import { Box, Grid, Button, Typography } from "@mui/material";
 import "./Services.css";
 
 const item = {
@@ -10,9 +10,9 @@ const item = {
 };
 const number = {
   fontSize: 24,
-  fontFamily: "default",
-  color: "secondary.main",
-  fontWeight: "medium",
+  fontFamily: "inherit",
+  color: "#fe005a",
+  fontWeight: "bold",
 };
 
 const image = {
@@ -52,10 +52,11 @@ function Services() {
           }}
         />
         <Typography
-          variant="h4"
+          variant="h3"
+          className="servicesHeader"
           textAlign={"center"}
           component={"h2"}
-          sx={{ mb: 10, mt: 8 }}
+          sx={{ mb: 10, mt: 8, fontFamily: "'Braah One', sans-serif" }}
         >
           Các dịch vụ của cửa hàng
         </Typography>
@@ -83,7 +84,7 @@ function Services() {
                 <Box sx={number}>2. Dịch vụ đóng gói</Box>
                 <Box
                   component={"img"}
-                  src={require("../../../assets/images/customer_service.png")}
+                  src={require("../../../assets/images/packing.png")}
                   alt="customer service"
                   sx={image}
                 />
@@ -99,7 +100,7 @@ function Services() {
                 <Box sx={number}>3. Dịch vụ vận chuyển</Box>
                 <Box
                   component={"img"}
-                  src={require("../../../assets/images/customer_service.png")}
+                  src={require("../../../assets/images/Delivery.png")}
                   alt="customer service"
                   sx={image}
                 />
@@ -125,7 +126,7 @@ function Services() {
                 <Box sx={number}>4. Dịch vụ hoàn trả hàng</Box>
                 <Box
                   component={"img"}
-                  src={require("../../../assets/images/customer_service.png")}
+                  src={require("../../../assets/images/return_purchase.png")}
                   alt="customer service"
                   sx={image}
                 />
@@ -144,20 +145,39 @@ function Services() {
                 <Box sx={number}>5. Dịch vụ khuyến mãi</Box>
                 <Box
                   component={"img"}
-                  src={require("../../../assets/images/customer_service.png")}
+                  src={require("../../../assets/images/sale.png")}
                   alt="customer service"
                   sx={image}
                 />
                 <Typography variant="h6" align="justify">
                   Vào các ngày giảm giá của shopee (ngày đôi, giữa tháng, cuối
-                  tháng), shop sẽ cung cấp một số voucher giảm giá như giảm 10%,
-                  20%, 50%, 15k, 50k, 100k tùy vào giá trị đơn hàng và voucher
-                  freeship với số lượng nhất định.
+                  tháng), shop sẽ cung cấp một số voucher giảm giá tùy vào giá
+                  trị đơn hàng và voucher freeship với số lượng nhất định.
                 </Typography>
               </Box>
             </Grid>
           </Grid>
         </div>
+        <Button
+          variant="contained"
+          component="a"
+          href="/signup"
+          className="getStartedBtn"
+          sx={{
+            mb: 8,
+            backgroundColor: "#ff0062",
+            fontWeight: "700",
+            fontSize: "large",
+            px: 4,
+            py: 1.5,
+            fontFamily: "inherit",
+            "&:hover": {
+              color: "white !important",
+            },
+          }}
+        >
+          Bắt đầu
+        </Button>
       </div>
     </Box>
   );
