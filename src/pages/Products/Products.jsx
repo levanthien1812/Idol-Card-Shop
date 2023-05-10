@@ -38,52 +38,56 @@ function Products() {
   };
 
   return (
-    <Stack marginTop={10}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Category</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={chosenCategory}
-          label="Category"
-          onChange={categoryChangeHandler}
-        >
-          {categories.map((category) => (
-            <MenuItem key={category.id} value={category.id}>
-              {category.name}
-            </MenuItem>
+    <Container>
+      <Stack marginTop={10}>
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Category</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={chosenCategory}
+            label="Category"
+            onChange={categoryChangeHandler}
+          >
+            {categories.map((category) => (
+              <MenuItem key={category.id} value={category.id}>
+                {category.name}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+        <Grid container marginTop={3} rowSpacing={3} columnSpacing={2}>
+          {productList.map((product) => (
+            <Grid item xs={4}>
+              <Card sx={{ maxWidth: 345 }}>
+                <CardActionArea
+                  onClick={() => productChooseHandler(product.id)}
+                >
+                  <CardMedia
+                    component="img"
+                    height="240"
+                    image={product.image}
+                    alt="green iguana"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      {product.name}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      fontSize={20}
+                    >
+                      {product.price + " VNĐ"}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
           ))}
-        </Select>
-      </FormControl>
-      <Grid container marginTop={3} rowSpacing={3} columnSpacing={2}>
-        {productList.map((product) => (
-          <Grid item xs={4}>
-            <Card sx={{ maxWidth: 345 }}>
-              <CardActionArea onClick={() => productChooseHandler(product.id)}>
-                <CardMedia
-                  component="img"
-                  height="240"
-                  image={product.image}
-                  alt="green iguana"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {product.name}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    fontSize={20}
-                  >
-                    {product.price + " VNĐ"}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Stack>
+        </Grid>
+      </Stack>
+    </Container>
   );
 }
 
