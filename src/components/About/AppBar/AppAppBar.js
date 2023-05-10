@@ -3,9 +3,10 @@ import Box from "@mui/material/Box";
 import { Link } from "@mui/material";
 import AppBar from "./AppBar";
 import Toolbar from "@mui/material/Toolbar";
+import "./AppAppBar.css";
 
 const rightLink = {
-  fontSize: 16,
+  fontSize: 18,
   color: "common.white",
   ml: 3,
 };
@@ -16,25 +17,32 @@ function AppAppBar() {
         <Toolbar
           sx={{
             justifyContent: "space-between",
-            backgroundColor: "#2091c6",
+            backgroundColor: "#5375db",
           }}
         >
           <Box
             sx={{
               flex: 1,
               display: "flex",
-              flexDirection: "row",
             }}
           >
-            <Link
-              variant="h6"
-              underline="none"
-              color={"inherit"}
-              href="/about"
-              sx={{ fontSize: 24, alignItems: "center" }}
-            >
-              {"Idol Card Shop"}
-            </Link>
+            <Box sx={{ flex: 1, display: "flex", alignItems: "flex-end" }}>
+              <Link
+                className="aabHeader"
+                variant="h6"
+                underline="none"
+                color={"inherit"}
+                href="/about"
+                sx={{
+                  fontSize: 24,
+                  display: "flex",
+                  alignItems: "center",
+                  fontFamily: "'Braah One', sans-serif",
+                }}
+              >
+                {"IDOL CARD SHOP"}
+              </Link>
+            </Box>
             <Box
               sx={{
                 flex: 1,
@@ -44,20 +52,24 @@ function AppAppBar() {
               }}
             >
               <Link
+                className="aabRightLink"
                 color={"inherit"}
                 variant="h6"
                 underline="none"
                 href="/signup"
                 sx={rightLink}
+                fontFamily={"'Braah One', sans-serif"}
               >
                 {"Đăng ký"}
               </Link>
               <Link
+                className="aabRightLink"
                 color={"inherit"}
                 variant="h6"
                 underline="none"
                 href="/login"
                 sx={rightLink}
+                fontFamily={"'Braah One', sans-serif"}
               >
                 {"Đăng nhập"}
               </Link>

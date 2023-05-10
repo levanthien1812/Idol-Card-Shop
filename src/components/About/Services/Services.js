@@ -32,7 +32,6 @@ function Services() {
       <div
         style={{
           marginTop: "3em",
-          marginBottom: "3em",
           position: "relative",
           display: "flex",
           flexDirection: "column",
@@ -61,7 +60,7 @@ function Services() {
           Các dịch vụ của cửa hàng
         </Typography>
         <div>
-          <Grid container spacing={5} mb={10}>
+          <Grid container spacing={5} mb={5}>
             <Grid item xs={12} md={4}>
               <Box sx={item}>
                 <Box sx={number}>1. Dịch vụ tư vấn</Box>
@@ -116,12 +115,12 @@ function Services() {
           <Grid
             container
             spacing={5}
-            mb={10}
+            mb={5}
             display={"flex"}
             flexDirection={"row"}
             justifyContent={"center"}
           >
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={5}>
               <Box sx={item}>
                 <Box sx={number}>4. Dịch vụ hoàn trả hàng</Box>
                 <Box
@@ -140,7 +139,7 @@ function Services() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={5}>
               <Box sx={item}>
                 <Box sx={number}>5. Dịch vụ khuyến mãi</Box>
                 <Box

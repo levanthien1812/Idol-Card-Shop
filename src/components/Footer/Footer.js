@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  MDBFooter,
-  MDBContainer,
-  MDBRow,
-  MDBCol,
-  MDBIcon,
-} from "mdb-react-ui-kit";
+import { MDBFooter, MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import {
   GitHub,
@@ -15,24 +9,36 @@ import {
   EmailRounded,
   PhoneRounded,
 } from "@mui/icons-material";
+import ShopeeIcon from "../../assets/images/shopee.png";
 
 function Footer() {
   return (
-    <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
+    <MDBFooter
+      bgColor="light"
+      className="text-center text-lg-start text-muted mt-5"
+    >
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <div className="me-5 d-none d-lg-block">
           <span>Liên lạc với chúng tôi qua các nền tảng mạng xã hội:</span>
         </div>
 
         <div>
-          <a href="#" className="me-4 text-reset btn-link">
+          <a href="#!" className="me-4 text-reset btn-link">
             <FacebookRounded />
           </a>
-          <a href="#" className="me-4 text-reset">
+          <a href="#!" className="me-4 text-reset">
             <Twitter />
           </a>
-          <a href="#" className="me-4 text-reset">
+          <a
+            href="https://github.com/levanthien1812/Idol-Card-Shop"
+            className="me-4 text-reset"
+            target="_blank"
+            rel="noreferrer"
+          >
             <GitHub />
+          </a>
+          <a href="#!" className="me-4 text-reset">
+            <img src={ShopeeIcon} alt="Shopee Icon" width={24} height={24} />
           </a>
         </div>
       </section>
@@ -41,10 +47,7 @@ function Footer() {
         <MDBContainer className="text-center text-md-start mt-5">
           <MDBRow className="mt-3">
             <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">
-                <MDBIcon icon="gem" className="me-3" />
-                IDOL CARD SHOP
-              </h6>
+              <h6 className="text-uppercase fw-bold mb-4">IDOL CARD SHOP</h6>
               <p>
                 Dòng sản phẩm Idol Card Shop cung cấp chính là các vật phẩm kỷ
                 niệm liên quan đến các thần tượng Hàn Quốc, được dùng cho mục
@@ -57,22 +60,22 @@ function Footer() {
                 Sản phẩm tiêu biểu
               </h6>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="/products/?category=album" className="text-reset">
                   Album
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="/products/?category=photocard" className="text-reset">
                   Photocard
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="/products/?category=lightstick" className="text-reset">
                   Lightstick
                 </a>
               </p>
               <p>
-                <a href="#!" className="text-reset">
+                <a href="/products/?category=poster" className="text-reset">
                   Poster
                 </a>
               </p>
@@ -102,7 +105,7 @@ function Footer() {
         style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
       >
         © 2023 Copyright:
-        <a className="text-reset fw-bold" href="https://mdbootstrap.com/">
+        <a className="text-reset fw-bold" href="#!">
           IdolCardShop.com
         </a>
       </div>

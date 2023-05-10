@@ -1,0 +1,16 @@
+@media only screen and (max-width: 470px) {
+  .aabHeader {
+    font-size: 20px !important;
+  }
+  .aabRightLink {
+    font-size: 15px !important ;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .aabHeader {
+    font-size: 16px !important;
+  }
+  .aabRightLink {
+    font-size: 12px !important;
+  }
+}
