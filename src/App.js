@@ -8,6 +8,7 @@ import Products from "./pages/Products/Products";
 import AppRoot from "./components/AppRoot";
 import DetailProduct from "./pages/Products/DetailProduct";
 import Order from "./pages/Order/Order";
+import Receipt from "./pages/Receipt/Receipt";
 
 function App() {
   const router = createBrowserRouter([
@@ -54,6 +55,15 @@ function App() {
                   element: <Order />,
                 },
               ],
+            },
+          ],
+        },
+        {
+          path: "receipt",
+          children: [
+            {
+              path: ":productId",
+              element: <Receipt />,
             },
           ],
         },
