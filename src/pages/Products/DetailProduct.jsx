@@ -12,10 +12,7 @@ import {
 import React, { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { getProductDetail, getRelatedProducts } from "../../services";
-import {
-  ChevronLeft,
-  ChevronRight,
-} from "@mui/icons-material";
+import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import RelatedProducts from "./components/RelatedProducts";
 
 function DetailProduct() {
@@ -24,33 +21,38 @@ function DetailProduct() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("user") !== null);
   const [quantity, setQuantity] = useState(1);
   const [error, setError] = useState(null);
-  
+
   const { id } = params;
   const product = getProductDetail(id);
-  const relatedProducts = getRelatedProducts(id)
+  const relatedProducts = getRelatedProducts(id);
 
   const incrementHandler = () => {
-    if (quantity > product.quantity) {
+    if (quantity + 1 > product.quantity) {
       return setError(
         "Không đủ hàng để bán! Vui lòng chọn số lượng mua phù hợp"
       );
     }
     setQuantity((prev) => prev + 1);
-    setError(null)
+    setError(null);
   };
 
   const decrementHandler = () => {
     if (quantity > 1) {
+      setError(null);
       setQuantity((prev) => prev - 1);
+    } else {
+      setError("Bạn phải mua tối thiểu 1 sản phẩm");
     }
   };
 
   const buyClickHandler = () => {
-    if (!isAuth) {
-      return setError("Bạn chưa đăng nhập, vui lòng đăng nhập để thực hiện");
-    }
+    // This will be uncommented if authentication is set
+    // if (!isAuth) {
+    //   return setError("Bạn chưa đăng nhập, vui lòng đăng nhập để thực hiện");
+    // }
+    
     // handle when user is logged in
-    navigate("/products/:id/order");
+    navigate(`/receipt/${product.id}?quantity=${quantity}`);
   };
 
   return (
@@ -104,7 +106,10 @@ function DetailProduct() {
                   }}
                   value={quantity}
                 />
-                <IconButton style={{ marginLeft: "8px" }} onClick={incrementHandler}>
+                <IconButton
+                  style={{ marginLeft: "8px" }}
+                  onClick={incrementHandler}
+                >
                   <ChevronRight />
                 </IconButton>
               </Stack>
@@ -119,7 +124,7 @@ function DetailProduct() {
           </Stack>
         </Stack>
       </Stack>
-      <RelatedProducts products={relatedProducts}/>
+      <RelatedProducts products={relatedProducts} />
     </Container>
   );
 }
