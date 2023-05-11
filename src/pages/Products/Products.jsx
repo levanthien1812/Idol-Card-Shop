@@ -1,8 +1,4 @@
 import {
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
   Container,
   FormControl,
   Grid,
@@ -10,11 +6,11 @@ import {
   MenuItem,
   Select,
   Stack,
-  Typography,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { products, categories } from "../../sample-data";
+import { ProductCard } from "./components/ProductCard";
 
 function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -31,10 +27,6 @@ function Products() {
   const categoryChangeHandler = (event) => {
     setChosenCategory(event.target.value);
     navigate(`/products/?category=${event.target.value}`);
-  };
-
-  const productChooseHandler = (id) => {
-    navigate(`/products/${id}`);
   };
 
   return (
@@ -59,30 +51,7 @@ function Products() {
         <Grid container marginTop={3} rowSpacing={3} columnSpacing={2}>
           {productList.map((product) => (
             <Grid item xs={4}>
-              <Card sx={{ maxWidth: 345 }}>
-                <CardActionArea
-                  onClick={() => productChooseHandler(product.id)}
-                >
-                  <CardMedia
-                    component="img"
-                    height="240"
-                    image={product.image}
-                    alt="green iguana"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {product.name}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      fontSize={20}
-                    >
-                      {product.price + " VNĐ"}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+              <ProductCard product={product}/>
             </Grid>
           ))}
         </Grid>
