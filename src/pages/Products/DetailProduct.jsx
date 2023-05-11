@@ -6,22 +6,48 @@ import {
   Stack,
   Typography,
   Container,
+  IconButton,
+  TextField,
 } from "@mui/material";
 import React, { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { getProductDetail } from "../../services";
+import { getProductDetail, getRelatedProducts } from "../../services";
+import {
+  ChevronLeft,
+  ChevronRight,
+} from "@mui/icons-material";
+import RelatedProducts from "./components/RelatedProducts";
 
 function DetailProduct() {
   const params = useParams();
   const navigate = useNavigate();
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("user") !== null);
+  const [quantity, setQuantity] = useState(1);
+  const [error, setError] = useState(null);
+  
   const { id } = params;
   const product = getProductDetail(id);
-  const [isAuth, setIsAuth] = useState(localStorage.getItem("user") !== null);
-  const [showAlert, setShowAlert] = useState(false);
+  const relatedProducts = getRelatedProducts(id)
+
+  const incrementHandler = () => {
+    if (quantity > product.quantity) {
+      return setError(
+        "Không đủ hàng để bán! Vui lòng chọn số lượng mua phù hợp"
+      );
+    }
+    setQuantity((prev) => prev + 1);
+    setError(null)
+  };
+
+  const decrementHandler = () => {
+    if (quantity > 1) {
+      setQuantity((prev) => prev - 1);
+    }
+  };
 
   const buyClickHandler = () => {
     if (!isAuth) {
-      return setShowAlert(true);
+      return setError("Bạn chưa đăng nhập, vui lòng đăng nhập để thực hiện");
     }
     // handle when user is logged in
     navigate("/products/:id/order");
@@ -30,14 +56,14 @@ function DetailProduct() {
   return (
     <Container>
       <Stack marginTop={14}>
-        {showAlert && (
+        {error && (
           <Alert
             severity="error"
             onClose={() => {
-              setShowAlert(false);
+              setError(null);
             }}
           >
-            You are not logged in! Please <Link to="/login">login here</Link>
+            {error}
           </Alert>
         )}
         <Stack marginTop={2} direction="row" spacing={3}>
@@ -63,6 +89,26 @@ function DetailProduct() {
             <Typography variant="p" marginTop={2}>
               Mô tả: {product.description}
             </Typography>
+            <Stack direction="row" marginTop={2} alignItems="center">
+              <Typography>Chọn số lượng mua: </Typography>
+              <Stack direction="row" marginLeft={2}>
+                <IconButton onClick={decrementHandler}>
+                  <ChevronLeft />
+                </IconButton>
+                <TextField
+                  style={{ marginLeft: "8px" }}
+                  size="small"
+                  inputProps={{
+                    style: { textAlign: "center", width: "50px" },
+                    readOnly: true,
+                  }}
+                  value={quantity}
+                />
+                <IconButton style={{ marginLeft: "8px" }} onClick={incrementHandler}>
+                  <ChevronRight />
+                </IconButton>
+              </Stack>
+            </Stack>
             <Button
               variant="contained"
               sx={{ marginTop: "16px" }}
@@ -73,6 +119,7 @@ function DetailProduct() {
           </Stack>
         </Stack>
       </Stack>
+      <RelatedProducts products={relatedProducts}/>
     </Container>
   );
 }
