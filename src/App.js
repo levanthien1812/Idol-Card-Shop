@@ -9,6 +9,8 @@ import AppRoot from "./components/AppRoot";
 import DetailProduct from "./pages/Products/DetailProduct";
 import Order from "./pages/Order/Order";
 import Receipt from "./pages/Receipt/Receipt";
+import { Provider } from "react-redux";
+import store from "./stores/store";
 
 function App() {
   const router = createBrowserRouter([
@@ -70,7 +72,10 @@ function App() {
       ],
     },
   ]);
-  return <RouterProvider router={router} />;
+  return <Provider store={store}>
+    <RouterProvider router={router} />;
+  </Provider>
+  
 }
 
 export default App;

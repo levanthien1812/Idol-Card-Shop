@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import {
   Button,
+  Divider,
   IconButton,
   Stack,
   TextField,
   Typography,
 } from "@mui/material";
-import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+import { ChevronLeft, ChevronRight, Star } from "@mui/icons-material";
 
 function OrderInfo({ product, _quantity }) {
   const [quantity, setQuantity] = useState(_quantity);
@@ -41,12 +42,18 @@ function OrderInfo({ product, _quantity }) {
       style={{
         border: "3px solid #c44dff",
         backgroundColor: "#f1edd955",
+        height: "fit-content",
       }}
       padding={3}
       borderRadius={3}
       flexGrow={1}
     >
-      <Typography variant="h5">Thông tin đơn hàng</Typography>
+      <Stack direction="row" justifyContent="center" alignItems="center" spacing={1}>
+        <Star/>
+        <Typography variant="h5">Thông tin đơn hàng</Typography>
+        <Star/>
+      </Stack>
+      <Divider style={{marginTop: "16px"}}/>
       <Stack marginTop={3}>
         <Stack direction="row" spacing={3}>
           <Stack
@@ -106,7 +113,11 @@ function OrderInfo({ product, _quantity }) {
         </Stack>
         <Button
           variant="contained"
-          style={{ marginTop: "16px", fontSize: "18px" }}
+          style={{
+            marginTop: "164px",
+            fontSize: "18px",
+            backgroundColor: "#c44dff",
+          }}
         >
           Đặt hàng
         </Button>
