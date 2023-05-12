@@ -1,9 +1,11 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import { Link } from "@mui/material";
+// import { Link } from "react-router-dom";
 import AppBar from "./AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import "./AppAppBar.css";
+import { useSelector } from "react-redux";
 
 const rightLink = {
   fontSize: 18,
@@ -11,6 +13,7 @@ const rightLink = {
   ml: 3,
 };
 function AppAppBar() {
+  const { isAuthed, user } = useSelector((state) => state.auth);
   return (
     <div>
       <AppBar position="fixed">
@@ -51,28 +54,42 @@ function AppAppBar() {
                 alignItems: "flex-end",
               }}
             >
-              <Link
-                className="aabRightLink"
-                color={"inherit"}
-                variant="h6"
-                underline="none"
-                href="/signup"
-                sx={rightLink}
-                fontFamily={"'Braah One', sans-serif"}
-              >
-                {"Đăng ký"}
-              </Link>
-              <Link
-                className="aabRightLink"
-                color={"inherit"}
-                variant="h6"
-                underline="none"
-                href="/login"
-                sx={rightLink}
-                fontFamily={"'Braah One', sans-serif"}
-              >
-                {"Đăng nhập"}
-              </Link>
+              {!isAuthed && (
+                <>
+                  <Link
+                    className="aabRightLink"
+                    color={"inherit"}
+                    variant="h6"
+                    underline="none"
+                    href="/signup"
+                    sx={rightLink}
+                    fontFamily={"'Braah One', sans-serif"}
+                  >
+                    {"Đăng ký"}
+                  </Link>
+                  <Link
+                    className="aabRightLink"
+                    color={"inherit"}
+                    variant="h6"
+                    underline="none"
+                    href="/login"
+                    sx={rightLink}
+                    fontFamily={"'Braah One', sans-serif"}
+                  >
+                    {"Đăng nhập"}
+                  </Link>
+                </>
+              )}
+              {isAuthed && (
+                <Link
+                  variant="h6"
+                  color="inherit"
+                  fontFamily={"'Braah One', sans-serif"}
+                  href="/"
+                >
+                  {user.username}
+                </Link>
+              )}
             </Box>
           </Box>
         </Toolbar>

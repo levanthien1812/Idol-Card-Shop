@@ -15,7 +15,7 @@ function Receipt() {
   const product = getProductDetail(productId);
 
   return (
-    <Container style={{ marginTop: "80px" }}>
+    <Container style={{ marginTop: "100px" }}>
       <Typography variant="h3" component="h1" marginBottom={2}>
         Đặt hàng & thanh toán
       </Typography>
