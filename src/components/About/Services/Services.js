@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Grid, Button, Typography } from "@mui/material";
 import "./Services.css";
+import { Link } from "react-router-dom";
 
 const item = {
   display: "flex",
@@ -157,26 +158,26 @@ function Services() {
             </Grid>
           </Grid>
         </div>
-        <Button
-          variant="contained"
-          component="a"
-          href="/signup"
-          className="getStartedBtn"
-          sx={{
-            mb: 8,
-            backgroundColor: "#ff0062",
-            fontWeight: "700",
-            fontSize: "large",
-            px: 4,
-            py: 1.5,
-            fontFamily: "inherit",
-            "&:hover": {
-              color: "white !important",
-            },
-          }}
-        >
-          Bắt đầu
-        </Button>
+        <Link to="/signup">
+          <Button
+            variant="contained"
+            className="getStartedBtn"
+            sx={{
+              mb: 8,
+              backgroundColor: "#ff0062",
+              fontWeight: "700",
+              fontSize: "large",
+              px: 4,
+              py: 1.5,
+              fontFamily: "inherit",
+              "&:hover": {
+                color: "white !important",
+              },
+            }}
+          >
+            Bắt đầu
+          </Button>
+        </Link>
       </div>
     </Box>
   );
