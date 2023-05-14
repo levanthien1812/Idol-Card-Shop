@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Typography } from "@mui/material";
 import GetStartedLayout from "./GetStartedLayout";
 import "./GetStarted.css";
+import { Link } from "react-router-dom";
 
 const backgroundImage = require("../../../assets/images/about_background.png");
 
@@ -41,28 +42,28 @@ function GetStarted() {
         quan đến các thần tượng Hàn Quốc, được dùng cho mục đích sưu tầm, trang
         trí hoặc cho mục đích thời trang.
       </Typography>
-      <Button
-        className="gsSignUpBtn"
-        color="secondary"
-        variant="contained"
-        size="large"
-        component="a"
-        href="/signup"
-        sx={{
-          minWidth: 130,
-          minHeight: 50,
-          fontWeight: "700",
-          fontSize: "large",
-          px: 4,
-          py: 1.5,
-          fontFamily: "inherit",
-          "&:hover": {
-            color: "white !important",
-          },
-        }}
-      >
-        Đăng kí
-      </Button>
+      <Link to={"/signup"}>
+        <Button
+          className="gsSignUpBtn"
+          color="secondary"
+          variant="contained"
+          size="large"
+          sx={{
+            minWidth: 130,
+            minHeight: 50,
+            fontWeight: "700",
+            fontSize: "large",
+            px: 4,
+            py: 1.5,
+            fontFamily: "inherit",
+            "&:hover": {
+              color: "white !important",
+            },
+          }}
+        >
+          Đăng kí
+        </Button>
+      </Link>
     </GetStartedLayout>
   );
 }
