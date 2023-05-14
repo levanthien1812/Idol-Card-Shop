@@ -67,7 +67,7 @@ function SignupForm() {
       email,
       password,
     };
-    dispatch(authActions.signup(newUser));
+    dispatch(authActions.setAuth(newUser));
     navigate("/about");
   };
 
