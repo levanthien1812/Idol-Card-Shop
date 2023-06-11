@@ -38,36 +38,31 @@ function App() {
           path: "forgotpassword",
           element: <ForgotPassword />,
         },
+        // {
+        //   path: "products",
+        //   children: [
+        //     {
+        //       index: true,
+        //       element: <Products />,
+        //     },
+        //     {
+        //       path: ":id",
+        //       children: [
+        //         {
+        //           index: true,
+        //           element: <DetailProduct />,
+        //         },
+        //         {
+        //           path: "order",
+        //           element: <Order />,
+        //         },
+        //       ],
+        //     },
+        //   ],
+        // },
         {
-          path: "products",
-          children: [
-            {
-              index: true,
-              element: <Products />,
-            },
-            {
-              path: ":id",
-              children: [
-                {
-                  index: true,
-                  element: <DetailProduct />,
-                },
-                {
-                  path: "order",
-                  element: <Order />,
-                },
-              ],
-            },
-          ],
-        },
-        {
-          path: "receipt",
-          children: [
-            {
-              path: ":productId",
-              element: <Receipt />,
-            },
-          ],
+          path: "order",
+          element: <Order />,
         },
       ],
     },

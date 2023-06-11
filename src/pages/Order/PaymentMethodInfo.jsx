@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Stack, Typography, Select, MenuItem, Chip } from "@mui/material";
 
-function PaymentMethodInfo() {
+function PaymentMethodInfo({ totalPrice }) {
   const [paymentChosen, setPaymentChosen] = useState("transfer");
   const bgWhite = { backgroundColor: "white" };
 
@@ -42,8 +42,8 @@ function PaymentMethodInfo() {
         {paymentChosen === "cash" && (
           <Stack marginTop={2}>
             <Typography>
-              Vui lòng chuẩn bị sẵn số tiền 200000đ khi nhận hàng tại địa điểm
-              đã đề cập ở trên khi shipper gọi
+              Vui lòng chuẩn bị sẵn số tiền {totalPrice}đ khi nhận hàng tại địa
+              điểm đã đề cập ở trên khi shipper gọi
             </Typography>
           </Stack>
         )}
@@ -56,7 +56,7 @@ function PaymentMethodInfo() {
               alignItems="center"
             >
               <Typography marginBottom={1}>Tổng thanh toán</Typography>
-              <Typography fontSize={20}>200000đ</Typography>
+              <Typography fontSize={20}>{totalPrice}đ</Typography>
             </Stack>
             <Stack marginTop={2}>
               <Typography marginBottom={1}>Internet Banking</Typography>

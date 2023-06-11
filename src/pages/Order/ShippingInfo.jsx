@@ -8,7 +8,7 @@ import {
   MenuItem,
   InputLabel,
 } from "@mui/material";
-import { getDistricts, getProvinces, getWards } from "../../../services";
+import { getDistricts, getProvinces, getWards } from "../../services";
 
 function ShippingInfo() {
   const bgWhite = { backgroundColor: "white" };
@@ -35,7 +35,7 @@ function ShippingInfo() {
     }
     fetchDistricts();
   }, [provinceChosen]);
-    
+
   useEffect(() => {
     async function fetchWards() {
       const _wards = await getWards(districtChosen);
@@ -51,8 +51,8 @@ function ShippingInfo() {
 
   const districtChangeHander = (event) => {
     setDistrictChosen(event.target.value);
-    };
-    
+  };
+
   const wardChangeHander = (event) => {
     setWardChosen(event.target.value);
   };
@@ -128,17 +128,18 @@ function ShippingInfo() {
               onChange={wardChangeHander}
             >
               {wards.map((ward) => (
-                <MenuItem
-                  key={ward.ward_id}
-                  value={ward.ward_id}
-                >
+                <MenuItem key={ward.ward_id} value={ward.ward_id}>
                   {ward.ward_name}
                 </MenuItem>
               ))}
             </Select>
           </FormControl>
         </Stack>
-        <TextField label="Tên đường và địa chỉ nhà" size="small" style={bgWhite} />
+        <TextField
+          label="Tên đường và địa chỉ nhà"
+          size="small"
+          style={bgWhite}
+        />
 
         <Typography marginTop={2} marginBottom={1}>
           Số điện thoại người nhận hàng

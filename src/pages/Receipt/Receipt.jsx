@@ -1,9 +1,9 @@
 import { Container, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import UserInfo from "./components/UserInfo";
-import ShippingInfo from "./components/ShippingInfo";
-import PaymentMethodInfo from "./components/PaymentMethodInfo";
-import OrderInfo from "./components/OrderInfo";
+import ShippingInfo from "../Order/ShippingInfo";
+import PaymentMethodInfo from "../Order/PaymentMethodInfo";
+import OrderInfo from "../Order/OrderInfo";
 import { useParams, useSearchParams } from "react-router-dom";
 import { getProductDetail } from "../../services";
 
@@ -30,7 +30,7 @@ function Receipt() {
           <PaymentMethodInfo />
         </Stack>
         {/* Order info */}
-        <OrderInfo product={product} _quantity={quantity}/>
+        <OrderInfo product={product} _quantity={quantity} />
       </Stack>
     </Container>
   );

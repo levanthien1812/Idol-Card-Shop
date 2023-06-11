@@ -3,10 +3,13 @@ import { Button, Typography } from "@mui/material";
 import GetStartedLayout from "./GetStartedLayout";
 import "./GetStarted.css";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const backgroundImage = require("../../../assets/images/about_background.png");
 
 function GetStarted() {
+  const isAuthed = useSelector((state) => state.auth.isAuthed);
+
   return (
     <GetStartedLayout
       sxBackground={{
@@ -53,7 +56,7 @@ function GetStarted() {
         năng tạo luồng gió mát, sản phẩm này là giải pháp lý tưởng cho việc làm
         mát cá nhân và mang lại sự thoải mái trong những môi trường nóng bức.
       </Typography>
-      <Link to={"/signup"}>
+      <Link to={isAuthed ? "/order" : "/signup"}>
         <Button
           className="gsSignUpBtn"
           color="secondary"
@@ -72,7 +75,7 @@ function GetStarted() {
             },
           }}
         >
-          Đăng kí
+          Mua ngay
         </Button>
       </Link>
     </GetStartedLayout>
