@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./LoginForm.css";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
-import { Container, IconButton, Input } from "@mui/material";
+import { Alert, Container, IconButton, Input } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import { Person, Visibility, VisibilityOff, Lock } from "@mui/icons-material";
@@ -13,13 +13,20 @@ import Checkbox from "@mui/material/Checkbox";
 import AppAppBar from "../../components/About/AppBar/AppAppBar";
 
 function LoginForm() {
-  const [popupStyle, showPopup] = useState("hide");
-  const popup = () => {
-    showPopup("login-popup");
-    setTimeout(() => showPopup("hide"), 3000);
-  };
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const usernameRef = useRef();
+  const passwordRef = useRef();
+  const [error, setError] = useState(null);
+  const signinHandler = () => {
+    const username = usernameRef.current.value;
+    const password = passwordRef.current.value;
+    if (!username || !password) {
+      return setError("Vui lòng điền đầy đủ các thông tin!");
+    }
+    // sign up successfully
+    setError(null);
+  };
   return (
     <Container
       sx={{
@@ -32,11 +39,21 @@ function LoginForm() {
       <AppAppBar />
       <div className="login">
         <h1>Đăng nhập</h1>
+        {error && (
+          <Alert style={{ width: "80%" }} severity="error">
+            {error}
+          </Alert>
+        )}
         <Box sx={{ display: "flex", alignItems: "flex-end" }}>
           <Person sx={{ mr: 2, fontSize: "2.2em" }} />
           <FormControl>
             <InputLabel htmlFor="username">Tên đăng nhập *</InputLabel>
-            <Input id="username" type="text" className="username" />
+            <Input
+              id="username"
+              type="text"
+              className="username"
+              inputRef={usernameRef}
+            />
           </FormControl>
         </Box>
         <Box display="flex" flexDirection="column">
@@ -53,6 +70,7 @@ function LoginForm() {
               <Input
                 id="password"
                 className="password"
+                inputRef={passwordRef}
                 type={showPassword ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">
@@ -87,7 +105,7 @@ function LoginForm() {
           </Link>
         </Box>
 
-        <div className="login-btn" onClick={popup}>
+        <div className="login-btn" onClick={signinHandler}>
           Đăng nhập
         </div>
         <p>
@@ -104,12 +122,6 @@ function LoginForm() {
             </Button>
           </Link>
         </p>
-
-        {/* Hiển thị pop up thông báo (ví dụ tạm thời) */}
-        <div className={popupStyle}>
-          <h3>Login Failed</h3>
-          <p>Username or password incorrect</p>
-        </div>
       </div>
     </Container>
   );
