@@ -8,7 +8,7 @@ import {
 import { useNavigate } from "react-router-dom";
 
 export const ProductCard = ({ product }) => {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
   const productChooseHandler = (id) => {
     navigate(`/products/${id}`);
   };
@@ -18,7 +18,7 @@ export const ProductCard = ({ product }) => {
       <CardActionArea onClick={() => productChooseHandler(product.id)}>
         <CardMedia
           component="img"
-          height="240"
+          height="350"
           image={product.image}
           alt="green iguana"
         />

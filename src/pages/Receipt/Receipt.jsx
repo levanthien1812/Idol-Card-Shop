@@ -30,7 +30,7 @@ function Receipt() {
           <PaymentMethodInfo />
         </Stack>
         {/* Order info */}
-        <OrderInfo product={product} _quantity={quantity}/>
+        <OrderInfo product={product} _quantity={quantity} />
       </Stack>
     </Container>
   );

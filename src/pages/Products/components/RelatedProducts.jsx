@@ -32,7 +32,7 @@ function RelatedProducts({ products }) {
       >
         <Swiper
           onSwiper={setSwiperRef}
-          slidesPerView={4}
+          slidesPerView={3}
           spaceBetween={30}
           navigation={{
             prevEl: ".prevBtn",
@@ -40,12 +40,12 @@ function RelatedProducts({ products }) {
           }}
           modules={[FreeMode, Navigation]}
           style={{
-              padding: "4px",
+            padding: "4px",
           }}
         >
           {products.map((product) => (
             <SwiperSlide key={product.id}>
-              <ProductCard product={product}/>
+              <ProductCard product={product} />
             </SwiperSlide>
           ))}
         </Swiper>
