@@ -46,17 +46,18 @@ function DetailProduct() {
   };
 
   const buyClickHandler = () => {
-    // This will be uncommented if authentication is set
-    // if (!isAuth) {
-    //   return setError("Bạn chưa đăng nhập, vui lòng đăng nhập để thực hiện");
-    // }
-
-    // handle when user is logged in
-    navigate(`/receipt/${product.id}?quantity=${quantity}`);
+    navigate(`/orders/?product=${product.id}&quantity=${quantity}`);
   };
 
   return (
-    <Container>
+    <Stack
+      style={{
+        backgroundImage:
+          'url("https://www.toptal.com/designers/subtlepatterns/uploads/leaves.png")',
+        backgroundColor: "#ffffff55",
+      }}
+      paddingX={20}
+    >
       <Stack marginTop={14}>
         {error && (
           <Alert
@@ -69,8 +70,8 @@ function DetailProduct() {
           </Alert>
         )}
         <Stack marginTop={2} direction="row" spacing={3}>
-          <Stack>
-            <Box width="500px" height="500px">
+          <Stack paddingTop={5}>
+            <Box width="500px" height="500px" boxShadow={2}>
               <img
                 width="100%"
                 height="100%"
@@ -81,18 +82,24 @@ function DetailProduct() {
           </Stack>
           <Stack padding={3}>
             <Typography variant="h2">{product.name}</Typography>
+            <Typography style={{ textDecoration: "line-through" }}>
+              Gía gốc: {product.oldPrice} VNĐ
+            </Typography>
             <Typography variant="p" fontSize={20}>
-              Giá: {product.price} VNĐ
+              Giảm giá còn:{" "}
+              <span style={{ fontSize: 24, fontWeight: 600, color: "red" }}>
+                {product.price} VNĐ
+              </span>
             </Typography>
             <Divider sx={{ marginTop: "20px" }} />
-            <Typography variant="p" marginTop={2}>
+            <Typography variant="p" marginTop={2} fontSize={20}>
               Số lượng hàng còn: {product.quantity}
             </Typography>
-            <Typography variant="p" marginTop={2}>
+            <Typography variant="p" marginTop={2} fontSize={20}>
               Mô tả: {product.description}
             </Typography>
             <Stack direction="row" marginTop={2} alignItems="center">
-              <Typography>Chọn số lượng mua: </Typography>
+              <Typography fontSize={20}>Chọn số lượng mua: </Typography>
               <Stack direction="row" marginLeft={2}>
                 <IconButton onClick={decrementHandler}>
                   <ChevronLeft />
@@ -118,6 +125,11 @@ function DetailProduct() {
               variant="contained"
               sx={{ marginTop: "16px" }}
               onClick={buyClickHandler}
+              style={{
+                fontSize: 20,
+                marginTop: 40,
+                backgroundImage: "linear-gradient(to right, #008DD6, #00C2BD",
+              }}
             >
               Mua sản phẩm
             </Button>
@@ -125,7 +137,7 @@ function DetailProduct() {
         </Stack>
       </Stack>
       <RelatedProducts products={relatedProducts} />
-    </Container>
+    </Stack>
   );
 }
 

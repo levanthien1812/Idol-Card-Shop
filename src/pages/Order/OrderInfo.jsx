@@ -9,13 +9,15 @@ import {
 } from "@mui/material";
 import { ChevronLeft, ChevronRight, Star } from "@mui/icons-material";
 
-function OrderInfo({ totalPrice, setTotalPrice }) {
-  const [quantity, setQuantity] = useState(1);
+function OrderInfo({ totalPrice, setTotalPrice, product, _quantity, onOrder }) {
+  const [quantity, setQuantity] = useState(_quantity);
   const [error, setError] = useState(null);
   const [shippingFee, setShippingFee] = useState(10000);
 
+  console.log(quantity)
+
   useEffect(() => {
-    setTotalPrice(quantity * 100000 + shippingFee);
+    setTotalPrice(quantity * product.price + shippingFee);
   }, [quantity, shippingFee]);
 
   const incrementHandler = () => {
@@ -70,14 +72,12 @@ function OrderInfo({ totalPrice, setTotalPrice }) {
           >
             <img
               width="100%"
-              src={
-                "https://cdn.chiaki.vn/unsafe/0x960/left/top/smart/filters:quality(90)/https://chiaki.vn/upload/product/2022/07/quat-usb-deo-co-mini-3-toc-do-pin-sac-2000mah-62d132ccc531d-15072022162636.png"
-              }
+              src={product.image}
             />
           </Stack>
           <Stack>
-            <Typography> Tên sản phẩm: Quạt đeo cổ mini</Typography>
-            <Typography marginTop={1}> Đơn giá: 100000 VNĐ</Typography>
+            <Typography fontSize={20}> Tên sản phẩm: Quạt đeo cổ mini</Typography>
+            <Typography marginTop={1}> Đơn giá: {product.price} VNĐ</Typography>
 
             <Stack direction="row" alignItems="center" marginTop={1}>
               <Typography> Số lượng: </Typography>
@@ -105,7 +105,7 @@ function OrderInfo({ totalPrice, setTotalPrice }) {
         <Stack direction="row" justifyContent="space-between" marginTop={3}>
           <Typography fontSize={18}>Tổng tiền sản phẩm:</Typography>
           <Typography fontWeight="600" fontSize={20}>
-            {100000 * quantity} đ
+            {product.price * quantity} đ
           </Typography>
         </Stack>
         <Stack direction="row" justifyContent="space-between" marginTop={1}>
@@ -127,6 +127,7 @@ function OrderInfo({ totalPrice, setTotalPrice }) {
             fontSize: "18px",
             backgroundColor: "#c44dff",
           }}
+          onClick={() => onOrder()}
         >
           Đặt hàng
         </Button>

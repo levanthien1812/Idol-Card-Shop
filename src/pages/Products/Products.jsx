@@ -6,6 +6,7 @@ import {
   MenuItem,
   Select,
   Stack,
+  Typography,
 } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
@@ -13,50 +14,30 @@ import { products, categories } from "../../sample-data";
 import { ProductCard } from "./components/ProductCard";
 
 function Products() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const navigate = useNavigate();
-  const category = searchParams.get("category");
-  const [chosenCategory, setChosenCategory] = useState(category);
-
-  const productList = products.filter(
-    (product) => product.category === category
-  );
-
-  console.log(productList);
-
-  const categoryChangeHandler = (event) => {
-    setChosenCategory(event.target.value);
-    navigate(`/products/?category=${event.target.value}`);
-  };
-
   return (
-    <Container>
-      <Stack marginTop={10}>
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Category</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={chosenCategory}
-            label="Category"
-            onChange={categoryChangeHandler}
-          >
-            {categories.map((category) => (
-              <MenuItem key={category.id} value={category.id}>
-                {category.name}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+    <Stack alignItems={"center"}>
+      <Stack
+        marginTop={10}
+        width={"60%"}
+        alignItems={"center"}
+        style={{
+          backgroundImage:
+            'url("https://www.toptal.com/designers/subtlepatterns/uploads/leaves.png")',
+          backgroundColor: "#ffffff55",
+        }}
+      >
+        <Typography fontSize={30}>Quạt đeo cổ các màu</Typography>
         <Grid container marginTop={3} rowSpacing={3} columnSpacing={2}>
-          {productList.map((product) => (
-            <Grid item xs={4}>
-              <ProductCard product={product}/>
+          {products.map((product) => (
+            <Grid item xs={6} textAlign={"center"} key={Math.random()}>
+              <Stack alignItems={"center"}>
+                <ProductCard product={product} />
+              </Stack>
             </Grid>
           ))}
         </Grid>
       </Stack>
-    </Container>
+    </Stack>
   );
 }
 

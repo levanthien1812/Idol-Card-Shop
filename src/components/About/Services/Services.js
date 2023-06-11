@@ -134,7 +134,7 @@ function Services() {
             </Grid>
           </Grid>
         </div>
-        <Link to={isAuthed ? "/order" : "/signup"}>
+        <Link to={isAuthed ? "/products" : "/signup"}>
           <Button
             variant="contained"
             className="getStartedBtn"
@@ -151,7 +151,7 @@ function Services() {
               },
             }}
           >
-            Mua ngay
+            Xem sản phẩm
           </Button>
         </Link>
       </div>

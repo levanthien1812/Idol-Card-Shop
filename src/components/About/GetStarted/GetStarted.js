@@ -56,7 +56,7 @@ function GetStarted() {
         năng tạo luồng gió mát, sản phẩm này là giải pháp lý tưởng cho việc làm
         mát cá nhân và mang lại sự thoải mái trong những môi trường nóng bức.
       </Typography>
-      <Link to={isAuthed ? "/order" : "/signup"}>
+      <Link to={isAuthed ? "/products" : "/signup"}>
         <Button
           className="gsSignUpBtn"
           color="secondary"
@@ -75,7 +75,7 @@ function GetStarted() {
             },
           }}
         >
-          Mua ngay
+          Xem sản phẩm
         </Button>
       </Link>
     </GetStartedLayout>
