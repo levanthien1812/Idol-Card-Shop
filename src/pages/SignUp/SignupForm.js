@@ -19,11 +19,6 @@ import { useDispatch } from "react-redux";
 import { authActions } from "../../stores/auth";
 
 function SignupForm() {
-  const [popupStyle, showPopup] = useState("hide");
-  const popup = () => {
-    showPopup("login-popup");
-    setTimeout(() => showPopup("hide"), 3000);
-  };
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const usernameRef = useRef();
@@ -180,12 +175,6 @@ function SignupForm() {
             </Button>
           </Link>
         </p>
-
-        {/* Hiển thị pop up thông báo (ví dụ tạm thời) */}
-        <div className={popupStyle}>
-          <h3>Signup Failed</h3>
-          <p>Username or password incorrect</p>
-        </div>
       </div>
     </Container>
   );
