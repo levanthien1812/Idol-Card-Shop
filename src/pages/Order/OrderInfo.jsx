@@ -9,18 +9,17 @@ import {
 } from "@mui/material";
 import { ChevronLeft, ChevronRight, Star } from "@mui/icons-material";
 
-function OrderInfo({ product, _quantity }) {
-  const [quantity, setQuantity] = useState(_quantity);
+function OrderInfo({ totalPrice, setTotalPrice }) {
+  const [quantity, setQuantity] = useState(1);
   const [error, setError] = useState(null);
   const [shippingFee, setShippingFee] = useState(10000);
-  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
-    setTotalPrice(quantity * product.price + shippingFee);
+    setTotalPrice(quantity * 100000 + shippingFee);
   }, [quantity, shippingFee]);
 
   const incrementHandler = () => {
-    if (quantity + 1 > product.quantity) {
+    if (quantity + 1 > 10) {
       return setError(
         "Không đủ hàng để bán! Vui lòng chọn số lượng mua phù hợp"
       );
@@ -48,12 +47,17 @@ function OrderInfo({ product, _quantity }) {
       borderRadius={3}
       flexGrow={1}
     >
-      <Stack direction="row" justifyContent="center" alignItems="center" spacing={1}>
-        <Star/>
+      <Stack
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        spacing={1}
+      >
+        <Star />
         <Typography variant="h5">Thông tin đơn hàng</Typography>
-        <Star/>
+        <Star />
       </Stack>
-      <Divider style={{marginTop: "16px"}}/>
+      <Divider style={{ marginTop: "16px" }} />
       <Stack marginTop={3}>
         <Stack direction="row" spacing={3}>
           <Stack
@@ -64,11 +68,16 @@ function OrderInfo({ product, _quantity }) {
             justifyContent="center"
             borderRadius={3}
           >
-            <img width="100%" src={product.image} />
+            <img
+              width="100%"
+              src={
+                "https://cdn.chiaki.vn/unsafe/0x960/left/top/smart/filters:quality(90)/https://chiaki.vn/upload/product/2022/07/quat-usb-deo-co-mini-3-toc-do-pin-sac-2000mah-62d132ccc531d-15072022162636.png"
+              }
+            />
           </Stack>
           <Stack>
-            <Typography> Tên sản phẩm: {product.name}</Typography>
-            <Typography marginTop={1}> Đơn giá: {product.price} VNĐ</Typography>
+            <Typography> Tên sản phẩm: Quạt đeo cổ mini</Typography>
+            <Typography marginTop={1}> Đơn giá: 100000 VNĐ</Typography>
 
             <Stack direction="row" alignItems="center" marginTop={1}>
               <Typography> Số lượng: </Typography>
@@ -96,7 +105,7 @@ function OrderInfo({ product, _quantity }) {
         <Stack direction="row" justifyContent="space-between" marginTop={3}>
           <Typography fontSize={18}>Tổng tiền sản phẩm:</Typography>
           <Typography fontWeight="600" fontSize={20}>
-            {product.price * quantity} đ
+            {100000 * quantity} đ
           </Typography>
         </Stack>
         <Stack direction="row" justifyContent="space-between" marginTop={1}>
