@@ -10,6 +10,7 @@ import {
   PhoneRounded,
 } from "@mui/icons-material";
 import ShopeeIcon from "../../assets/images/shopee.png";
+import TiktokIcon from "../../assets/images/tiktok.png";
 
 function Footer() {
   return (
@@ -23,7 +24,12 @@ function Footer() {
         </div>
 
         <div>
-          <a href="#!" className="me-4 text-reset btn-link">
+          <a
+            href="https://www.facebook.com/profile.php?id=100093511000723"
+            target="_blank"
+            rel="noreferrer"
+            className="me-4 text-reset btn-link"
+          >
             <FacebookRounded />
           </a>
           <a href="#!" className="me-4 text-reset">
@@ -38,7 +44,7 @@ function Footer() {
             <GitHub />
           </a>
           <a href="#!" className="me-4 text-reset">
-            <img src={ShopeeIcon} alt="Shopee Icon" width={24} height={24} />
+            <img src={TiktokIcon} alt="Shopee Icon" width={24} height={24} />
           </a>
         </div>
       </section>
@@ -47,40 +53,25 @@ function Footer() {
         <MDBContainer className="text-center text-md-start mt-5">
           <MDBRow className="mt-3">
             <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
-              <h6 className="text-uppercase fw-bold mb-4">IDOL CARD SHOP</h6>
+              <h6 className="text-uppercase fw-bold mb-4">
+                CoolBreeze Solutions
+              </h6>
               <p>
-                Dòng sản phẩm Idol Card Shop cung cấp chính là các vật phẩm kỷ
-                niệm liên quan đến các thần tượng Hàn Quốc, được dùng cho mục
-                đích sưu tầm, trang trí hoặc cho mục đích thời trang.
+                Quạt đeo cổ mini là một sản phẩm công nghệ nhỏ gọn, có thiết kế
+                thông minh, là giải pháp lý tưởng cho việc làm mát cá nhân và
+                mang lại sự thoải mái trong những môi trường nóng bức.
               </p>
             </MDBCol>
 
             <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">
-                Sản phẩm tiêu biểu
+                Công dụng tiêu biểu
               </h6>
-              <p>
-                <a href="/products/?category=album" className="text-reset">
-                  Album
-                </a>
-              </p>
-              <p>
-                <a href="/products/?category=photocard" className="text-reset">
-                  Photocard
-                </a>
-              </p>
-              <p>
-                <a href="/products/?category=lightstick" className="text-reset">
-                  Lightstick
-                </a>
-              </p>
-              <p>
-                <a href="/products/?category=poster" className="text-reset">
-                  Poster
-                </a>
-              </p>
+              <p>Tạo cảm giác mát mẻ</p>
+              <p>Tiện ích di động</p>
+              <p>Sự thoải mái cá nhân</p>
+              <p>Thiết kế tiện lợi</p>
             </MDBCol>
-
             <MDBCol md="4" lg="3" xl="3" className="mx-auto mb-md-0 mb-4">
               <h6 className="text-uppercase fw-bold mb-4">Liên hệ</h6>
               <p className="d-flex justify-content-md-start justify-content-center">
@@ -89,7 +80,7 @@ function Footer() {
               </p>
               <p className="d-flex justify-content-md-start justify-content-center">
                 <EmailRounded sx={{ marginRight: 2 }} />
-                idolcardshop@gm.uit.vn
+                coolbreeze@gm.uit.vn
               </p>
               <p className="d-flex justify-content-md-start justify-content-center">
                 <PhoneRounded sx={{ marginRight: 2 }} />
@@ -106,7 +97,7 @@ function Footer() {
       >
         © 2023 Copyright:
         <a className="text-reset fw-bold" href="#!">
-          IdolCardShop.com
+          CoolBreeze.com
         </a>
       </div>
     </MDBFooter>

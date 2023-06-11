@@ -41,7 +41,7 @@ function AppAppBar() {
                     cursor: "pointer",
                   }}
                 >
-                  IDOL CARD SHOP
+                  CoolBreeze Solutions
                 </label>
               </Link>
             </Box>
@@ -63,17 +63,6 @@ function AppAppBar() {
                     to="/signup"
                   >
                     <label style={rightLink}>Đăng ký</label>
-                  </Link>
-                  <Link
-                    className="aabRightLink"
-                    color={"inherit"}
-                    variant="h6"
-                    underline="none"
-                    to="/login"
-                    sx={rightLink}
-                    fontFamily={"'Braah One', sans-serif"}
-                  >
-                    {"Đăng nhập"}
                   </Link>
                 </>
               )}
