@@ -58,101 +58,74 @@ function Services() {
           component={"h2"}
           sx={{ mb: 10, mt: 8, fontFamily: "'Braah One', sans-serif" }}
         >
-          Các dịch vụ của cửa hàng
+          Mô tả sản phẩm
         </Typography>
         <div>
-          <Grid container spacing={5} mb={5}>
-            <Grid item xs={12} md={4}>
+          <Grid container spacing={5} mb={7} px={3}>
+            <Grid item xs={12} md={6}>
               <Box sx={item}>
-                <Box sx={number}>1. Dịch vụ tư vấn</Box>
+                <Box sx={number}>Tạo cảm giác mát mẻ</Box>
                 <Box
                   component={"img"}
-                  src={require("../../../assets/images/customer_service.png")}
+                  src={require("../../../assets/images/breeze.png")}
                   alt="customer service"
                   sx={image}
                 />
                 <Typography variant="h6" align="justify">
-                  Tư vấn khách hàng trong quy trình đặt/đổi/hoàn/hủy đơn hàng.
-                  <br />
-                  Nhận đặt hàng các vật phẩm không có sẵn trên shop theo yêu cầu
-                  của khách hàng.
+                  Sản phẩm tạo luồng gió mát nhẹ nhàng, giúp giảm cảm giác khó
+                  chịu trong những ngày nóng. Người dùng có thể điều chỉnh tốc
+                  độ gió và góc hướng để đạt được sự thoải mái tối ưu.
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={6}>
               <Box sx={item}>
-                <Box sx={number}>2. Dịch vụ đóng gói</Box>
+                <Box sx={number}>Tiện ích di động</Box>
                 <Box
                   component={"img"}
-                  src={require("../../../assets/images/packing.png")}
+                  src={require("../../../assets/images/outdoor.png")}
                   alt="customer service"
                   sx={image}
                 />
                 <Typography variant="h6" align="justify">
-                  Cam kết sản phẩm được đóng gói cẩn thận, chắc chắn; tránh bụi
-                  bẩn, mưa, độ ẩm, nắng nóng và những va chạm có thể gây hư hại
-                  sản phẩm.
+                  Quạt đeo cổ mini cho phép người dùng mang theo sản phẩm và sử
+                  dụng mọi lúc, mọi nơi. Điều này rất hữu ích trong các hoạt
+                  động ngoài trời, thể thao, du lịch hoặc làm việc trong môi
+                  trường nóng.
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={6}>
               <Box sx={item}>
-                <Box sx={number}>3. Dịch vụ vận chuyển</Box>
+                <Box sx={number}>Sự thoải mái cá nhân</Box>
                 <Box
                   component={"img"}
-                  src={require("../../../assets/images/Delivery.png")}
+                  src={require("../../../assets/images/personal.png")}
                   alt="customer service"
                   sx={image}
                 />
                 <Typography variant="h6" align="justify">
-                  Đảm bảo đơn hàng giao đúng địa chỉ trong đúng thời gian dự
-                  kiến hiển thị trên app. <br />
-                  Đảm bảo trạng thái, vị trí đơn hàng được cập nhật liên tục,
-                  đầy đủ trên tài khoản khách hàng trong quá trình vận chuyển.
+                  Quạt đeo cổ mini cung cấp sự mát mẻ trực tiếp cho vùng cổ và
+                  khu vực xung quanh. Điều này giúp người dùng cảm thấy thoải
+                  mái và tăng cường hiệu suất làm việc trong môi trường nhiệt
+                  đới hoặc khi hoạt động vận động.
                 </Typography>
               </Box>
             </Grid>
-          </Grid>
-          <Grid
-            container
-            spacing={5}
-            mb={5}
-            display={"flex"}
-            flexDirection={"row"}
-            justifyContent={"center"}
-          >
-            <Grid item xs={12} md={5}>
+            <Grid item xs={12} md={6}>
               <Box sx={item}>
-                <Box sx={number}>4. Dịch vụ hoàn trả hàng</Box>
+                <Box sx={number}>Thiết kế tiện lợi</Box>
                 <Box
                   component={"img"}
-                  src={require("../../../assets/images/return_purchase.png")}
+                  src={require("../../../assets/images/flexible.png")}
                   alt="customer service"
                   sx={image}
                 />
                 <Typography variant="h6" align="justify">
-                  Điều kiện trả hàng: giao sai sản phẩm, không đúng mẫu mã, kích
-                  thước, chất liệu như mô tả, sản phẩm bị hư hại do vận chuyển.
-                  <br />
-                  Phương thức hoàn tiền: Khách hàng có thể nhận lại tiền qua
-                  ngân hàng, nhận voucher giá trị tương đương hoặc nhận lại sản
-                  phẩm đúng.
-                </Typography>
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={5}>
-              <Box sx={item}>
-                <Box sx={number}>5. Dịch vụ khuyến mãi</Box>
-                <Box
-                  component={"img"}
-                  src={require("../../../assets/images/sale.png")}
-                  alt="customer service"
-                  sx={image}
-                />
-                <Typography variant="h6" align="justify">
-                  Vào các ngày giảm giá của shopee (ngày đôi, giữa tháng, cuối
-                  tháng), shop sẽ cung cấp một số voucher giảm giá tùy vào giá
-                  trị đơn hàng và voucher freeship với số lượng nhất định.
+                  Với thiết kế nhẹ nhàng và có thể điều chỉnh, quạt đeo cổ mini
+                  dễ dàng điều chỉnh phù hợp với mọi người dùng. Nó cũng được
+                  trang bị pin hoặc sạc tích hợp, giúp tiết kiệm thời gian và
+                  tiền bạc cho việc thay pin thường xuyên.
                 </Typography>
               </Box>
             </Grid>

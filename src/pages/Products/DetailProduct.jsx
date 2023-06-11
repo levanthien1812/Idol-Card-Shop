@@ -50,7 +50,7 @@ function DetailProduct() {
     // if (!isAuth) {
     //   return setError("Bạn chưa đăng nhập, vui lòng đăng nhập để thực hiện");
     // }
-    
+
     // handle when user is logged in
     navigate(`/receipt/${product.id}?quantity=${quantity}`);
   };

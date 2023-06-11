@@ -53,47 +53,18 @@ const ImageIconButton = styled(ButtonBase)(() => ({
 
 const images = [
   {
-    url: "https://images-na.ssl-images-amazon.com/images/I/61dMr8RTFvL._SL1469_.jpg",
-    title: "Album",
-    width: "40%",
+    url: "https://res.cloudinary.com/dvmxvwqev/image/upload/v1686458411/product_mvjdkn.jpg",
+    title: "Quạt đeo cổ mini",
+    width: "55%",
     height: "33em",
     link: "/products/?category=album",
   },
   {
-    url: "https://d3tvwjfge35btc.cloudfront.net/Assets/GalleryImage/47/332/L_g0146433247.jpg",
-    title: "Photocard",
-    width: "28%",
-    height: "33em",
-    link: "/products/?category=photocard",
-  },
-  {
-    url: "https://i.etsystatic.com/35874120/r/il/9cb84e/4184343289/il_794xN.4184343289_dztf.jpg",
-    title: "Dây đeo",
-    width: "32%",
-    height: "33em",
-    link: "/products/?category=day-deo",
-  },
-  {
-    url: "https://ae01.alicdn.com/kf/S49cc412ef88f4e898c9ac5702104f619e/Kawaii-Kpop-Bt211-MANG-SHOOKY-RJ-Keychain-Anime-COOKY-KOYA-CHIMMY-Cartoon-Acrylic-Key-Ring-Cute.jpg_640x640.jpg",
-    title: "Móc khóa",
-    width: "25%",
-    height: "33em",
-    link: "/products/?category=moc-khoa",
-  },
-  {
-    url: "https://qph.cf2.quoracdn.net/main-qimg-1549f42781dac6a380d8870203566880",
-    title: "Poster",
-    width: "30%",
-    height: "33em",
-    link: "/products/?category=poster",
-  },
-
-  {
-    url: "https://www.sanity.com.au/media/Images/fullimage/816638/SDC_2758297_2023-24-3--16-04-27.jpg",
-    title: "Lightstick",
+    url: "https://res.cloudinary.com/dvmxvwqev/image/upload/v1686458411/product2_d031pk.jpg",
+    title: "Công dụng",
     width: "45%",
     height: "33em",
-    link: "/products/?category=lightstick",
+    link: "/",
   },
 ];
 
@@ -114,7 +85,7 @@ function ProductCategories() {
         component="h2"
         fontFamily={"'Braah One', sans-serif"}
       >
-        Những sản phẩm chủ yếu
+        Sản phẩm của cửa hàng
       </Typography>
       <Box
         className="productCategories"

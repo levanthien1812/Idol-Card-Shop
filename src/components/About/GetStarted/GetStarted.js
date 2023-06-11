@@ -29,18 +29,29 @@ function GetStarted() {
         mt={12}
         className="gsHeader"
       >
-        IDOL CARD SHOP
+        CoolBreeze Solutions
+      </Typography>
+      <hr style={{ color: "white", width: "20%", height: "1px" }} />
+      <Typography
+        color="inherit"
+        align="center"
+        variant="h5"
+        sx={{ mb: 2, mt: 2 }}
+        className="gsText"
+      >
+        Giải pháp không khí nguyên thuỷ tuyệt đối
       </Typography>
       <Typography
         color="inherit"
         align="center"
         variant="h6"
-        sx={{ mb: 8, mt: 10 }}
+        sx={{ mb: 5, mt: 5 }}
         className="gsText"
       >
-        Dòng sản phẩm Idol Card Shop cung cấp chính là các vật phẩm kỷ niệm liên
-        quan đến các thần tượng Hàn Quốc, được dùng cho mục đích sưu tầm, trang
-        trí hoặc cho mục đích thời trang.
+        Quạt đeo cổ mini là một sản phẩm công nghệ nhỏ gọn, có thiết kế thông
+        minh giúp người dùng mang theo và đeo trên cổ một cách dễ dàng. Với chức
+        năng tạo luồng gió mát, sản phẩm này là giải pháp lý tưởng cho việc làm
+        mát cá nhân và mang lại sự thoải mái trong những môi trường nóng bức.
       </Typography>
       <Link to={"/signup"}>
         <Button
