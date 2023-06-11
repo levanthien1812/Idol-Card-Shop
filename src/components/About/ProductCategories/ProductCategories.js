@@ -57,7 +57,7 @@ const images = [
     title: "Quạt đeo cổ mini",
     width: "55%",
     height: "33em",
-    link: "/products/?category=album",
+    link: "/products/?category=green",
   },
   {
     url: "https://res.cloudinary.com/dvmxvwqev/image/upload/v1686458411/product2_d031pk.jpg",

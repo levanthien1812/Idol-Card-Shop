@@ -1,101 +1,69 @@
 export const products = [
   {
     id: "product_1",
-    name: "Album 1",
-    price: 10000000,
-    category: "album",
-    quantity: 10,
+    name: "Quạt đeo cổ mini màu hồng",
+    price: 65000,
+    category: "pink",
+    quantity: 100,
     image:
-      "https://upload.wikimedia.org/wikipedia/en/e/e7/Born_Pink_Digital.jpeg",
+      "https://cbu01.alicdn.com/img/ibank/O1CN01CzJzBA2JTmwqLeKwz_!!2215616229423-0-cib.jpg",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, ex quia. Commodi quia harum illo ducimus consectetur repellendus architecto laboriosam tempore optio libero quis in recusandae perferendis repellat, doloremque molestiae.",
+      "Quạt Tích Điện Đeo Cổ Mini Không Cánh 3 Cấp Độ Gió Cổng Sạc USB Tiện Lợi Khi Đi Ngoài Trời, Dã Ngoại Dáng Thời Trang Quạt Đeo Cổ Siêu Mát, Quạt Đeo Cổ, Quạt Mini Đeo Cổ, Quạt Điện Mini Quạt Đeo Cổ Mini",
   },
   {
     id: "product_2",
-    name: "Album 2",
-    price: 20000000,
-    category: "album",
-    quantity: 10,
+    name: "Quạt đeo cổ mini màu xanh lá cây",
+    price: 65000,
+    category: "green",
+    quantity: 100,
     image:
-      "https://upload.wikimedia.org/wikipedia/en/e/e7/Born_Pink_Digital.jpeg",
+      "https://cbu01.alicdn.com/img/ibank/O1CN01njO7Mb2JTmx0VtsfV_!!2215616229423-0-cib.jpg",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, ex quia. Commodi quia harum illo ducimus consectetur repellendus architecto laboriosam tempore optio libero quis in recusandae perferendis repellat, doloremque molestiae.",
+      "Quạt Tích Điện Đeo Cổ Mini Không Cánh 3 Cấp Độ Gió Cổng Sạc USB Tiện Lợi Khi Đi Ngoài Trời, Dã Ngoại Dáng Thời Trang Quạt Đeo Cổ Siêu Mát, Quạt Đeo Cổ, Quạt Mini Đeo Cổ, Quạt Điện Mini Quạt Đeo Cổ Mini",
   },
   {
     id: "product_3",
-    name: "Album 3",
-    price: 30000000,
-    category: "album",
-    quantity: 10,
+    name: "Quạt đeo cổ mini màu trắng",
+    price: 65000,
+    category: "white",
+    quantity: 100,
     image:
-      "https://upload.wikimedia.org/wikipedia/en/e/e7/Born_Pink_Digital.jpeg",
+      "https://cbu01.alicdn.com/img/ibank/O1CN012y461X2JTmwyVwG8U_!!2215616229423-0-cib.jpg",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, ex quia. Commodi quia harum illo ducimus consectetur repellendus architecto laboriosam tempore optio libero quis in recusandae perferendis repellat, doloremque molestiae.",
+      "Quạt Tích Điện Đeo Cổ Mini Không Cánh 3 Cấp Độ Gió Cổng Sạc USB Tiện Lợi Khi Đi Ngoài Trời, Dã Ngoại Dáng Thời Trang Quạt Đeo Cổ Siêu Mát, Quạt Đeo Cổ, Quạt Mini Đeo Cổ, Quạt Điện Mini Quạt Đeo Cổ Mini",
   },
   {
     id: "product_4",
-    name: "Album 4",
-    price: 40000000,
-    category: "album",
-    quantity: 10,
+    name: "Quạt đeo cổ mini màu xanh",
+    price: 65000,
+    category: "blue",
+    quantity: 100,
     image:
-      "https://upload.wikimedia.org/wikipedia/en/e/e7/Born_Pink_Digital.jpeg",
+      "https://cbu01.alicdn.com/img/ibank/O1CN01hjNBr92JTmwwFPcMm_!!2215616229423-0-cib.jpg",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, ex quia. Commodi quia harum illo ducimus consectetur repellendus architecto laboriosam tempore optio libero quis in recusandae perferendis repellat, doloremque molestiae.",
-  },
-  {
-    id: "product_5",
-    name: "Album 5",
-    price: 50000000,
-    category: "album",
-    quantity: 10,
-    image:
-      "https://upload.wikimedia.org/wikipedia/en/e/e7/Born_Pink_Digital.jpeg",
-    description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, ex quia. Commodi quia harum illo ducimus consectetur repellendus architecto laboriosam tempore optio libero quis in recusandae perferendis repellat, doloremque molestiae.",
-  },
-  {
-    id: "product_6",
-    name: "Album 6",
-    price: 60000000,
-    category: "album",
-    quantity: 10,
-    image:
-      "https://upload.wikimedia.org/wikipedia/en/e/e7/Born_Pink_Digital.jpeg",
-    description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, ex quia. Commodi quia harum illo ducimus consectetur repellendus architecto laboriosam tempore optio libero quis in recusandae perferendis repellat, doloremque molestiae.",
+      "Quạt Tích Điện Đeo Cổ Mini Không Cánh 3 Cấp Độ Gió Cổng Sạc USB Tiện Lợi Khi Đi Ngoài Trời, Dã Ngoại Dáng Thời Trang Quạt Đeo Cổ Siêu Mát, Quạt Đeo Cổ, Quạt Mini Đeo Cổ, Quạt Điện Mini Quạt Đeo Cổ Mini",
   },
 ];
 
 export const categories = [
   {
-    id: "album",
-    name: "Album",
+    id: "pink",
+    name: "Màu hồng",
     image: "https://static-cse.canva.com/blob/1052545/1600w-1Nr6gsUndKw.jpg",
   },
   {
-    id: "photocard",
-    name: "Photocard",
+    id: "green",
+    name: "Màu xanh lá cây",
     image: "https://static-cse.canva.com/blob/1052545/1600w-1Nr6gsUndKw.jpg",
   },
   {
-    id: "lightstick",
-    name: "Lightstick",
+    id: "blue",
+    name: "Màu xanh",
     image: "https://static-cse.canva.com/blob/1052545/1600w-1Nr6gsUndKw.jpg",
   },
   {
-    id: "moc-khoa",
-    name: "Móc khóa",
-    image: "https://static-cse.canva.com/blob/1052545/1600w-1Nr6gsUndKw.jpg",
-  },
-  {
-    id: "poster",
-    name: "Poster",
-    image: "https://static-cse.canva.com/blob/1052545/1600w-1Nr6gsUndKw.jpg",
-  },
-  {
-    id: "day-deo",
-    name: "Dây đeo",
+    id: "white",
+    name: "Màu trắng",
     image: "https://static-cse.canva.com/blob/1052545/1600w-1Nr6gsUndKw.jpg",
   },
 ];
