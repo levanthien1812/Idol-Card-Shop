@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Stack, Typography, Select, MenuItem, Chip } from "@mui/material";
 
-function PaymentMethodInfo({ totalPrice }) {
-  const [paymentChosen, setPaymentChosen] = useState("transfer");
+function PaymentMethodInfo({ totalPrice, paymentMethod, setPaymentChosen }) {
   const bgWhite = { backgroundColor: "white" };
 
   const paymentChangeHandler = (event) => {
@@ -31,7 +30,7 @@ function PaymentMethodInfo({ totalPrice }) {
           size="small"
           style={bgWhite}
           onChange={paymentChangeHandler}
-          value={paymentChosen}
+          value={paymentMethod}
         >
           <MenuItem value="cash">
             Thanh toán khi nhận hàng bằng tiền mặt
@@ -39,7 +38,7 @@ function PaymentMethodInfo({ totalPrice }) {
           <MenuItem value="transfer">Chuyển khoản ngân hàng</MenuItem>
         </Select>
 
-        {paymentChosen === "cash" && (
+        {paymentMethod === "cash" && (
           <Stack marginTop={2}>
             <Typography>
               Vui lòng chuẩn bị sẵn số tiền {totalPrice}đ khi nhận hàng tại địa
@@ -47,7 +46,7 @@ function PaymentMethodInfo({ totalPrice }) {
             </Typography>
           </Stack>
         )}
-        {paymentChosen === "transfer" && (
+        {paymentMethod === "transfer" && (
           <>
             <Stack
               marginTop={2}

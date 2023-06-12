@@ -21,7 +21,7 @@ function AppAppBar() {
         <Toolbar
           sx={{
             justifyContent: "space-between",
-            backgroundColor: "#6963D1",
+            backgroundImage: "linear-gradient(to right, #008DD6, #00C2BD",
           }}
         >
           <Box

@@ -11,8 +11,16 @@ import Order from "./pages/Order/Order";
 import Receipt from "./pages/Receipt/Receipt";
 import { Provider } from "react-redux";
 import store from "./stores/store";
+import { createTheme, ThemeProvider } from "@mui/material";
+import OrderSuccess from "./pages/Order/OrderSuccess";
 
 function App() {
+  const theme = createTheme({
+    typography: {
+      fontFamily: "Quicksand, sans-serif",
+    },
+  });
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -38,39 +46,41 @@ function App() {
           path: "forgotpassword",
           element: <ForgotPassword />,
         },
-        // {
-        //   path: "products",
-        //   children: [
-        //     {
-        //       index: true,
-        //       element: <Products />,
-        //     },
-        //     {
-        //       path: ":id",
-        //       children: [
-        //         {
-        //           index: true,
-        //           element: <DetailProduct />,
-        //         },
-        //         {
-        //           path: "order",
-        //           element: <Order />,
-        //         },
-        //       ],
-        //     },
-        //   ],
-        // },
         {
-          path: "order",
+          path: "products",
+          children: [
+            {
+              index: true,
+              element: <Products />,
+            },
+            {
+              path: ":id",
+              children: [
+                {
+                  index: true,
+                  element: <DetailProduct />,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          path: "orders",
           element: <Order />,
+        },
+        {
+          path: "order-list/:id",
+          element: <OrderSuccess />,
         },
       ],
     },
   ]);
   return (
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
+    </ThemeProvider>
   );
 }
 

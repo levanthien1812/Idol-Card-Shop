@@ -2,6 +2,7 @@ export const products = [
   {
     id: "product_1",
     name: "Quạt đeo cổ mini màu hồng",
+    oldPrice: 80000,
     price: 65000,
     category: "pink",
     quantity: 100,
@@ -13,7 +14,8 @@ export const products = [
   {
     id: "product_2",
     name: "Quạt đeo cổ mini màu xanh lá cây",
-    price: 65000,
+    oldPrice: 80000,
+    price: 60000,
     category: "green",
     quantity: 100,
     image:
@@ -24,7 +26,8 @@ export const products = [
   {
     id: "product_3",
     name: "Quạt đeo cổ mini màu trắng",
-    price: 65000,
+    oldPrice: 85000,
+    price: 68000,
     category: "white",
     quantity: 100,
     image:
@@ -34,8 +37,9 @@ export const products = [
   },
   {
     id: "product_4",
-    name: "Quạt đeo cổ mini màu xanh",
-    price: 65000,
+    name: "Quạt đeo cổ mini màu xanh biển",
+    oldPrice: 80000,
+    price: 63000,
     category: "blue",
     quantity: 100,
     image:

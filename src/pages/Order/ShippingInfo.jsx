@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { getDistricts, getProvinces, getWards } from "../../services";
 
-function ShippingInfo() {
+function ShippingInfo({ setShippingInfo }) {
   const bgWhite = { backgroundColor: "white" };
   const [provinces, setProvinces] = useState([]);
   const [provinceChosen, setProvinceChosen] = useState(79);
@@ -18,6 +18,8 @@ function ShippingInfo() {
   const [districtChosen, setDistrictChosen] = useState(785);
   const [wards, setWards] = useState([]);
   const [wardChosen, setWardChosen] = useState(27595);
+  const [street, setStreet] = useState("");
+  const [phone, setPhone] = useState("");
 
   useEffect(() => {
     async function fetchProvinces() {
@@ -56,6 +58,16 @@ function ShippingInfo() {
   const wardChangeHander = (event) => {
     setWardChosen(event.target.value);
   };
+
+  useEffect(() => {
+    setShippingInfo({
+      province: provinceChosen,
+      district: districtChosen,
+      ward: wardChosen,
+      street,
+      phone,
+    });
+  }, [provinceChosen, districtChosen, wardChosen, street, phone]);
 
   return (
     <Stack
@@ -139,6 +151,8 @@ function ShippingInfo() {
           label="Tên đường và địa chỉ nhà"
           size="small"
           style={bgWhite}
+          value={street}
+          onChange={(event) => setStreet(event.target.value)}
         />
 
         <Typography marginTop={2} marginBottom={1}>
@@ -148,6 +162,8 @@ function ShippingInfo() {
           size="small"
           label="Số điện thoại"
           style={bgWhite}
+          value={phone}
+          onChange={(event) => setPhone(event.target.value)}
         ></TextField>
       </Stack>
     </Stack>

@@ -1,6 +1,6 @@
 import { Container, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import UserInfo from "./components/UserInfo";
+import UserInfo from "../Order/UserInfo";
 import ShippingInfo from "../Order/ShippingInfo";
 import PaymentMethodInfo from "../Order/PaymentMethodInfo";
 import OrderInfo from "../Order/OrderInfo";
