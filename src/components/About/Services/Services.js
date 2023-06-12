@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Grid, Button, Typography } from "@mui/material";
 import "./Services.css";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const item = {
   display: "flex",
@@ -22,6 +23,7 @@ const image = {
 };
 
 function Services() {
+  const { isAuthed } = useSelector((state) => state.auth);
   return (
     <Box
       component={"section"}
@@ -131,7 +133,7 @@ function Services() {
             </Grid>
           </Grid>
         </div>
-        <Link to="/signup">
+        <Link to={isAuthed ? "/products/?category=green" : "/signup"}>
           <Button
             variant="contained"
             className="getStartedBtn"
@@ -148,7 +150,7 @@ function Services() {
               },
             }}
           >
-            Bắt đầu
+            {isAuthed ? "Mua sản phẩm" : "Bắt đầu"}
           </Button>
         </Link>
       </div>
