@@ -6,13 +6,17 @@ import { Alert, Container, IconButton, Input } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 import { Person, Visibility, VisibilityOff, Lock } from "@mui/icons-material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import AppAppBar from "../../components/About/AppBar/AppAppBar";
+import { useDispatch } from "react-redux";
+import { authActions } from "../../stores/auth";
 
 function LoginForm() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const usernameRef = useRef();
@@ -26,6 +30,12 @@ function LoginForm() {
     }
     // sign up successfully
     setError(null);
+    const newUser = {
+      username,
+      password,
+    };
+    dispatch(authActions.setAuth(newUser));
+    navigate("/about");
   };
   return (
     <Container

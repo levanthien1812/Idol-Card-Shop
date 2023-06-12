@@ -4,7 +4,18 @@ import AppBar from "./AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import "./AppAppBar.css";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from "@mui/material";
+
+import { useDispatch } from "react-redux";
+import { authActions } from "../../../stores/auth";
 
 const rightLink = {
   fontSize: 18,
@@ -14,7 +25,23 @@ const rightLink = {
   cursor: "pointer",
 };
 function AppAppBar() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { isAuthed, user } = useSelector((state) => state.auth);
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleSignout = () => {
+    setOpen(false);
+    dispatch(authActions.logout(user));
+    navigate("/about");
+  };
   return (
     <div>
       <AppBar position="fixed">
@@ -67,7 +94,7 @@ function AppAppBar() {
                 </>
               )}
               {isAuthed && (
-                <Link variant="h6" to="/">
+                <Link variant="h6" to="/" onClick={handleClickOpen}>
                   <label style={rightLink}>{user.username}</label>
                 </Link>
               )}
@@ -75,6 +102,25 @@ function AppAppBar() {
           </Box>
         </Toolbar>
       </AppBar>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">Đăng xuất?</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Bạn có muốn đăng xuất?
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Không</Button>
+          <Button onClick={handleSignout} autoFocus>
+            Có
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }
