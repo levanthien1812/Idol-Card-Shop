@@ -10,13 +10,15 @@ import { useSelector } from "react-redux";
 
 function Order() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const quantity = searchParams.get("quantity");
+  const [quantity, setQuantity] = searchParams.get("quantity");
   const productId = searchParams.get("product");
   const product = getProductDetail(productId);
   const [totalPrice, setTotalPrice] = useState(0);
   const [userInfo, setUserInfo] = useState({});
   const [shippingInfo, setShippingInfo] = useState({});
   const [paymentMethod, setPaymentMethod] = useState("transfer");
+  const [shippingFee, setShippingFee] = useState(10000);
+
   const navigate = useNavigate();
   const user = useSelector((state) => state.auth.user);
 
@@ -26,22 +28,13 @@ function Order() {
       shippingInfo,
       paymentMethod,
       product,
+      quantity,
       totalPrice,
+      shippingFee,
     };
 
     const newId = Math.round(Math.random() * 1000);
-    const orders = localStorage.getItem("orders");
-    if (!orders) {
-      localStorage.setItem(
-        "orders",
-        JSON.stringify([{ ...orderInfo, id: newId }])
-      );
-    } else {
-      localStorage.setItem(
-        "orders",
-        JSON.stringify([...orders, { ...orderInfo, id: newId }])
-      );
-    }
+    localStorage.setItem("order", JSON.stringify({ ...orderInfo, id: newId }));
     navigate("/order-list/" + newId);
   };
 
@@ -69,8 +62,10 @@ function Order() {
           totalPrice={totalPrice}
           setTotalPrice={setTotalPrice}
           product={product}
-          _quantity={quantity}
+          quantity={quantity}
+          setQuantity={setQuantity}
           onOrder={orderHandler}
+          shippingFee={shippingFee}
         />
       </Stack>
     </Container>

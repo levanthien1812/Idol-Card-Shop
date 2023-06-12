@@ -9,12 +9,16 @@ import {
 } from "@mui/material";
 import { ChevronLeft, ChevronRight, Star } from "@mui/icons-material";
 
-function OrderInfo({ totalPrice, setTotalPrice, product, _quantity, onOrder }) {
-  const [quantity, setQuantity] = useState(_quantity);
+function OrderInfo({
+  totalPrice,
+  setTotalPrice,
+  product,
+  quantity,
+  setQuantity,
+  onOrder,
+  shippingFee,
+}) {
   const [error, setError] = useState(null);
-  const [shippingFee, setShippingFee] = useState(10000);
-
-  console.log(quantity)
 
   useEffect(() => {
     setTotalPrice(quantity * product.price + shippingFee);
@@ -26,18 +30,19 @@ function OrderInfo({ totalPrice, setTotalPrice, product, _quantity, onOrder }) {
         "Không đủ hàng để bán! Vui lòng chọn số lượng mua phù hợp"
       );
     }
-    setQuantity((prev) => prev + 1);
+    setQuantity(quantity + 1);
     setError(null);
   };
 
   const decrementHandler = () => {
     if (quantity > 1) {
       setError(null);
-      setQuantity((prev) => prev - 1);
+      setQuantity(quantity - 1);
     } else {
       setError("Bạn phải mua tối thiểu 1 sản phẩm");
     }
   };
+
   return (
     <Stack
       style={{
@@ -70,13 +75,13 @@ function OrderInfo({ totalPrice, setTotalPrice, product, _quantity, onOrder }) {
             justifyContent="center"
             borderRadius={3}
           >
-            <img
-              width="100%"
-              src={product.image}
-            />
+            <img width="100%" src={product.image} />
           </Stack>
           <Stack>
-            <Typography fontSize={20}> Tên sản phẩm: Quạt đeo cổ mini</Typography>
+            <Typography fontSize={20}>
+              {" "}
+              Tên sản phẩm: Quạt đeo cổ mini
+            </Typography>
             <Typography marginTop={1}> Đơn giá: {product.price} VNĐ</Typography>
 
             <Stack direction="row" alignItems="center" marginTop={1}>
